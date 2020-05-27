@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="org.promise.currencyconverter.home.HomeFragment"
+        android:label="Home Fragment"
+        tools:layout="@layout/home_fragment">
+        <action
+            android:id="@+id/action_homeFragment_to_converterFragment"
+            app:destination="@id/converterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/converterFragment"
+        android:name="org.promise.currencyconverter.ConverterFragment"
+        android:label="Converter"
+        tools:layout="@layout/converter_fragment">
+        <argument
+            android:name="currency"
+            app:argType="org.promise.currencyconverter.StackOverflow" />
+    </fragment>
+    <fragment
+        android:id="@+id/historicalFragment"
+        android:name="org.promise.currencyconverter.HistoricalFragment"
+        android:label="Currency History"
+        tools:layout="@layout/historical_fragment" />
+</navigation>
